@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h2>Ejercicio 2</h2>
+    <p>Crear una página en donde se pueda calcular el salario de un obrero.Calcular el salario y verificar si alcanza o no el salario mínimo</p>
+
+    <div class="contenedor-ejer dos">
+        <p>Se asume que el obrero trabaja 8 horas por día, 5 días a la semana</p>
+
+        <label for="">Ingresa el monto recibido por hora:</label>
+        <input type="number" name="monto" id="monto">
+        <button class="calcular">Calcular</button>
+    </div>
+</body>
+
+<script>
+    let contenedor=document.querySelector('.contenedor-ejer.dos');
+    let calcular=document.querySelector('.calcular');
+    
+    let resultado= document.createElement('p');
+
+    calcular.addEventListener('click', ()=>{
+        let monto= document.getElementById('monto').value;
+        let salario= (((monto*8)*5)*4);
+
+        if(salario>=2798309){
+            resultado.innerText='El salario es '+ salario +' y si alcanza el mínimo';
+            contenedor.appendChild(resultado);
+        }else{
+            resultado.innerText='El salario es '+ salario +' y no alcanza el mínimo';
+            contenedor.appendChild(resultado);
+        }
+    });
+    
+
+    //contenedor.appendChild(salario);
+</script>
+</html>

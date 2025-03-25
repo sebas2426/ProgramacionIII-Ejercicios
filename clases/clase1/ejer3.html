@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h2>Ejercicio 3</h2>
+    <p>Crear una página donde puedas adivinar un número que ha sido generado de forma aleatoria. Si el número generado es mayor a lo que el usuario introdujo debe mostrar un mensaje que debe ingresar un número mayor y viceversa</p>
+
+    <div class="contenedor-ejer tres">
+
+        <h3>¡Adivina un número!</h3>
+        <p>Cuentas con cinco intentos para poder adivinar un número generado de manera aleatoria</p>
+        <p class="intentosP">Intentos restantes: 5</p>
+        
+        <label for="">Ingresa tu número:</label>
+        <input type="number" id="numeroUsuario" min="0">
+        <button id="calcular">Juega</button>
+    </div>
+</body>
+
+<script>
+    let intentosRestantes=5;
+   
+    let parrafo= document.querySelector('.intentosP');
+    let mensaje= document.createElement('p');
+    let calcular= document.getElementById('calcular');
+
+    let min=1;
+    let max=10;
+    let numero= Math.floor(Math.random() * (max-min+1))+min;
+
+calcular.addEventListener('click', ()=>{
+   
+    let numeroUsuario= document.getElementById('numeroUsuario').value;
+
+    if(intentosRestantes==0){
+        mensaje.innerText='Se te acabaron los intentos. El número era: '+numero;
+        calcular.disabled=true;
+        
+    }else if(intentosRestantes<=5){
+        if(numeroUsuario>numero){
+            mensaje.innerText='El número es menor al que ingresaste.'
+            intentosRestantes--;
+            parrafo.innerText='Intentos restantes: '+intentosRestantes;
+
+        }else if(numeroUsuario<numero){
+            mensaje.innerText='El número es mayor al que ingresaste.'
+            
+            intentosRestantes--;
+            parrafo.innerText='Intentos restantes: '+intentosRestantes;
+
+        }else{
+            mensaje.innerText='Felicidades, acertaste. El número era: '+numero;
+            parrafo.innerText='Intentos restantes: '+intentosRestantes;
+            calcular.disabled=true;
+        }
+    }
+    parrafo.appendChild(mensaje);
+});
+
+</script>
+</html>

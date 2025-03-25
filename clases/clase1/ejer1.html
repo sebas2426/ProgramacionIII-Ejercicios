@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h2>Ejercicio 1</h2>
+    <p>Crea una página en donde el usuario pueda ingresar datos para calcular el área de un rectángulo</p>
+
+    <div class="contenedor-ejer 1">
+        <label for="">Ingresa el largo del rectángulo:</label>
+        <input type="number" name="largo" id="largo">
+        <br>
+        <label for="">Ingresa el ancho del rectángulo:</label>
+        <input type="number" name="ancho" id="ancho">
+        <br>
+        <button id="calcular">Calcular</button>
+        <label for="">El área del rectángulo es:</label>
+        <input type="text" id="result">
+    </div>
+
+
+    <script>
+        let calcular= document.getElementById('calcular');
+        let result= document.getElementById('result');
+        calcular.addEventListener('click', ()=>{
+            let largo= document.getElementById('largo').value;
+            let ancho= document.getElementById('ancho').value;
+            
+            result= largo*ancho;
+            document.getElementById('result').value=result;
+        });
+    </script>
+</body>
+</html>
