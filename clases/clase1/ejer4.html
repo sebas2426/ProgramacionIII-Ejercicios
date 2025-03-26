@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h2>Ejercicio 4</h2>
+    <p>Validar si un número es par o impar, mostrar al usuario un mensaje</p>
+    <div class="contenedor-ejer cuatro">
+        <label for="">Ingresa un número</label>
+        <input type="number" min="0" id="numero">
+        <button id="calcular">Calcular</button>
+    </div>
+</body>
+<script>
+    let numero= document.getElementById('numero').value;
+    let calcular= document.getElementById('calcular');
+    let contenedor= document.querySelector('.contenedor-ejer.cuatro');
+    let resultado= document.createElement('p');
+
+    calcular.addEventListener('click', ()=>{
+        numero= document.getElementById('numero').value;
+        if(numero<0){
+            resultado.innerText='El número no es válido';
+        }else if(numero%2==0){
+            resultado.innerText='El número es par';
+        }else if (numero%2!=0){
+            resultado.innerText='El número es impar';
+        }
+        contenedor.appendChild(resultado);
+    });
+
+</script>
+</html>
