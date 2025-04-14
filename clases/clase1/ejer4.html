@@ -22,7 +22,7 @@
 
     calcular.addEventListener('click', ()=>{
         numero= document.getElementById('numero').value;
-        if(numero<0){
+        if(numero<=0){
             resultado.innerText='El número no es válido';
         }else if(numero%2==0){
             resultado.innerText='El número es par';

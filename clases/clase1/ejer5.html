@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h2>Ejercicio 5</h2>
+    <p>Crear una página que solicite al usuario introducir una contraseña y el sistema debe validar la contraseña para mostrar un mensaje verificando o error</p>
+    <div class="contenedor-ejer cinco">
+        <label for="">Introduce tu contraseña</label>
+        <input type="password" id="passUsuario">
+        <button id="verificar">Verificar</button>
+    </div>
+    <div class="preguntaContenedor">
+        <button class="preguntaEsquina"><img src="../../images/pregunta2.png" alt=""></button>
+    </div>
+</body>
+<script>
+    
+    let passCorrecta='prueba1234';
+    let btnVerificar= document.getElementById('verificar');
+    let preguntaEsquina= document.querySelector('.preguntaEsquina');
+    btnVerificar.addEventListener("click", () =>{
+        let passUsuario=document.getElementById('passUsuario').value;
+        if(passUsuario==passCorrecta){
+            alert('La contraseña es correcta, bienvenido :)');
+        }else{
+            alert('La contraseña no es correcta, intentalo de nuevo');
+        }
+        
+    });
+
+    preguntaEsquina.addEventListener('click', ()=>{
+        alert('prueba1234');
+    });
+</script>
+</html>
