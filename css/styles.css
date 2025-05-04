@@ -49,17 +49,25 @@
     isolation: isolate;
   }
 
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 a{
   color: black;
 }
-
+.contenedor-explicacion{
+  background-color: #ffffff;
+  width: 80%;
+}
 #explicacion{
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     width: 70%;
     height: auto;
-    margin: 2rem;
-    background-color: lightgreen;
 
 }
 
@@ -77,7 +85,6 @@ a{
     width: 40%;
     height: auto;
     padding: 1rem 1rem 4rem 1rem;
-    background-color: lightpink;
 }
 
 #titulos-contenedor{
@@ -118,16 +125,11 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-
-  /*para que el header se quede fijo en la pantalla*/
-  /*position: sticky;*/
-  /*superponer el header ante cualquier otro elemento*/
-  /*z-index: 1000;*/
-  
   width: 100%;
   height: 4rem;
-
-  background-color: rgb(86, 81, 158);
+  /*background-color: #EFFAFD;*/
+  /*background-color: #4A8BDF;*/
+  /*background-color: #A0006D;*/
 }
 main{
   display: flex;
@@ -138,6 +140,7 @@ main{
   width: 100%;
   overflow: auto;
   padding: 1rem;
+  background-color: #EFFAFD;
 }
 
 footer{
@@ -145,9 +148,6 @@ footer{
   flex-direction: column;
   width: 100%;
   height: auto;
-  flex-grow:1;
-  /*position: sticky;*/
-  bottom: 0;
   background-color: rgb(60, 61, 102);
 }
 
@@ -158,13 +158,13 @@ nav{
   gap: 1rem;
 }
 
-nav a{
+header nav a{
   color: rgb(255, 255, 255);
   text-decoration: none;
   transition: 0.3s;
 }
 
-nav a:hover{
+header nav a:hover{
   transform: scale(1.1);
   padding: 0.4rem;
   background-color: rgb(51, 117, 209);
@@ -193,11 +193,37 @@ nav a:hover{
   margin: 20px auto;        /* Centers the line with auto left/right margins */
 }
 
+.footer-line2{
+  border: none;             /* Remove default styling */
+  border-top: 2px solid #929292; /* Define thickness and color */
+  width: 60%;               /* Makes the line shorter than full width */
+  margin: 20px auto;        /* Centers the line with auto left/right margins */
+}
+
+.footer-centro{
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 20%;
+  height: 10rem;
+}
+
+.footer-centro div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .footer-derecha{
   display: flex;
   flex-direction: column;
+  text-align: center;
   width: 20rem;
   height: auto;
+  gap: 0.5rem;
   background-color: rgb(122, 182, 179);
 }
 
