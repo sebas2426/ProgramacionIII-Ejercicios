@@ -3,35 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/ejercicios.css">
     <title>Ejercicio 1</title>
 </head>
 <body>
+    <header>
+        <div class="header-izquierda">
+            <a href="/index.html"><h2>Tobías Palma</h2></a>
+        </div>
+
+        <nav>
+            <a href="">Modo Nocturno</a>
+            <a href="">Otros Proyectos</a>
+            <a href="">Sobre mí</a>
+        </nav>
+    </header>
+
+    <main>
     <h2>Ejercicio 1</h2>
     <p>Crea una página en donde el usuario pueda ingresar datos para calcular el área de un rectángulo</p>
-
+    <div class="contenedor-general 1">
     <div class="contenedor-ejer 1">
-        <label for="">Ingresa el largo del rectángulo:</label>
+        <label for="">Ingresa el largo del rectángulo</label>
         <input type="number" name="largo" id="largo">
         <br>
-        <label for="">Ingresa el ancho del rectángulo:</label>
+        <label for="">Ingresa el ancho del rectángulo</label>
         <input type="number" name="ancho" id="ancho">
         <br>
         <button id="calcular">Calcular</button>
         <label for="">El área del rectángulo es:</label>
         <input type="text" id="result">
     </div>
+    <div class="figura">
+        <p class="num-figura uno">1</p>
+        <img src="../../images/rectangulo.png" alt="">
+        <p class="num-figura dos">2</p>
+    </div>
+</div>
+</main>
 
-
+<footer>
+    <hr class="footer-line">
+    <div class="contenedor-footer">
+        <div class="footer-derecha">
+            <h2>Tobías Palma</h2>
+            <p>Estudiante de Ing. Informática & Web developer en formación.</p>
+            <nav>
+                <a href="https://github.com/sebas2426"><img src="./images/github-sign.png" alt=""></a>
+                <a href="https://www.linkedin.com/in/tobias-palma/"><img src="./images/linkedin.png" alt=""></a>
+                
+            </nav>
+        </div>
+        <div class="footer-centro">
+                <div>
+                    <img src="../../images/whatsapp.png" alt="WhatsApp Icon">
+                    <p>+595-972-187-642</p>
+                </div>
+                <div>
+                    <img src="../../images/gmail.png" alt="Gmail Icon">
+                    <p>tobiaspalma505@gmail.com</p>
+                </div>
+        </div>
+        <img src="../../images/spida.png" width="200px" height="auto" class="imagen-footer" alt="Spider web dev">
+    </div>
+    <hr class="footer-line2">
+    </footer>
+</body>
     <script>
         let calcular= document.getElementById('calcular');
         let result= document.getElementById('result');
+        let numFigurasAlto= document.querySelector('.num-figura.uno');
+        let numFigurasAncho= document.querySelector('.num-figura.dos');
         calcular.addEventListener('click', ()=>{
             let largo= document.getElementById('largo').value;
             let ancho= document.getElementById('ancho').value;
+
+            numFigurasAlto.textContent=largo;
+            numFigurasAncho.textContent=ancho;
             
             result= largo*ancho;
             document.getElementById('result').value=result;
         });
+
+
     </script>
-</body>
+
 </html>
