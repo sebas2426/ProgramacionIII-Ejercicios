@@ -4,7 +4,6 @@
     justify-content: space-around;
     width: 80%;
     padding: 0.5rem;
-    background-color: lightgreen;
 }
 .contenedor-ejer{
     display: flex;
@@ -20,7 +19,6 @@
 .figura{
     position: relative;
     display: flex;
-    background-color: lightblue;
 }
 
 .num-figura.uno{
@@ -33,4 +31,8 @@
     position: relative;
     top: 190px;
     right: 135px;
+}
+.preguntaEsquina{
+    cursor: pointer;
+    border: none;
 }
